@@ -1,0 +1,66 @@
+How to test the services:
+
+
+POST
+http://127.0.0.1:8080/Skip/api/v1/Customer/auth?email=demarcosluiz@gmail.com&password=123456
+
+POST
+http://127.0.0.1:8080/Skip/api/v1/Customer
+{
+  "id": 21,
+  "email": "email@provider.com",
+  "name": "Josh",
+  "address": "15o Street",
+  "creation": "2018-03-19T13:29:27.852Z",
+  "password": "pass"
+}
+
+GET
+http://127.0.0.1:8080/Skip/api/v1/Cousine
+
+GET
+http://127.0.0.1:8080/Skip/api/v1/Cousine/search/bra
+http://127.0.0.1:8080/Skip/api/v1/Cousine/1/stores
+
+GET
+http://127.0.0.1:8080/Skip/api/v1/Product
+http://127.0.0.1:8080/Skip/api/v1/Product/search/ca
+http://127.0.0.1:8080/Skip/api/v1/Product/2
+
+GET
+http://127.0.0.1:8080/Skip/api/v1/Store
+http://127.0.0.1:8080/Skip/api/v1/Store/search/ni
+http://127.0.0.1:8080/Skip/api/v1/Store/2
+http://127.0.0.1:8080/Skip/api/v1/Store/2/products
+
+POST
+http://127.0.0.1:8080/Skip/api/v1/Order
+{
+  "id": 1,
+  "date": "2018-03-18T20:19:15.399Z",
+  "customerId": 1,
+  "deliveryAddress": "Mood Street",
+  "contact": "Jose",
+  "storeId": 1,
+  "orderItems": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "productId": 1,
+      "product": {
+        "id": 1,
+        "storeId": 1,
+        "name": "Product",
+        "description": "Description of product",
+        "price": 10.20
+      },
+      "price": 10.20,
+      "quantity": 2,
+      "total": 20.40
+    }
+  ],
+  "total": 20.40,
+  "status": "approved",
+  "lastUpdate": "2018-03-18T20:19:15.399Z"
+}
+
